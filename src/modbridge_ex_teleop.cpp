@@ -17,10 +17,10 @@ void joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "teleop_tuned");
+    ros::init(argc, argv, "modbridge_examples_teleop");
     ros::NodeHandle n;
     
-    pub = n.advertise<modelica_bridge::ModComm>("modros_joy", 1);
+    pub = n.advertise<modelica_bridge::ModComm>("modbridge_joy", 1);
     ros::Subscriber joy_sub = n.subscribe<sensor_msgs::Joy>("joy", 10, joyCallback);
 
     ros::spin();

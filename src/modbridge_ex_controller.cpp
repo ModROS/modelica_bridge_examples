@@ -28,12 +28,12 @@ void joyCallback(const modelica_bridge::ModComm::ConstPtr& modJoy) {
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "controller_modros");
+    ros::init(argc, argv, "modbridge_examples_controller");
     ros::NodeHandle n;
     
     pub = n.advertise<modelica_bridge::ModComm>("control_values", 1);
     ros::Subscriber relay_sub = n.subscribe("model_values", 1, controlCallBack);
-    ros::Subscriber joy_sub = n.subscribe("modros_joy", 1, joyCallback);
+    ros::Subscriber joy_sub = n.subscribe("modbridge_joy", 1, joyCallback);
 
     ros::spin();
 

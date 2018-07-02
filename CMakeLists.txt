@@ -8,16 +8,16 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 catkin_package(CATKIN_DEPENDS message_runtime ${CATKIN_DEPS})
 
-### Trials using joystick input to control values in Modelica model
+add_executable(modbridge_ex_controller src/modbridge_ex_controller.cpp)
+target_link_libraries(modbridge_ex_controller ${catkin_LIBRARIES})
+add_dependencies(modbridge_ex_controller ${catkin_EXPORTED_TARGETS})
 
-## Example of using modelica_bridge with a basic two spring-damper system
-# Subscribes to additional node to recieve scaled joystick node values, to use as setpoint for proportional control.
-# Uses ModComm.msg for passing values to relay node
-add_executable(controller_spring src/spring_example/controller_spring.cpp)
-target_link_libraries(controller_spring ${catkin_LIBRARIES})
-add_dependencies(controller_spring ${catkin_EXPORTED_TARGETS})
+add_executable(modbridge_ex_teleop src/modbridge_ex_teleop.cpp)
+target_link_libraries(modbridge_ex_teleop ${catkin_LIBRARIES})
+add_dependencies(modbridge_ex_teleop ${catkin_EXPORTED_TARGETS})
 
-# Recieves values from Joy node, scales values, and assigns desired axes values to the values within ModComm.msg
-add_executable(teleop_spring src/spring_example/teleop_spring.cpp)
-target_link_libraries(teleop_spring ${catkin_LIBRARIES})
-add_dependencies(teleop_spring ${catkin_EXPORTED_TARGETS})
+install(TARGETS modbridge_ex_controller modbridge_ex_teleop
+        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(DIRECTORY launch/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)

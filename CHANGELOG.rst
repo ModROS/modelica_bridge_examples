@@ -2,6 +2,10 @@
 Changelog for package modelica_bridge_examples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fixed CHANGELOG.rst
+
 0.1.0 (2018-06-30)
 ------------------
 * Fixed CHANGELOG.rst
