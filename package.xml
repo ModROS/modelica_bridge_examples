@@ -2,10 +2,18 @@
 <package format="2">
   <name>modelica_bridge_examples</name>
   <version>0.1.0</version>
-  <description>An example package of using the modelica_bridge package</description>
+  <description>
+    An example package on using the modelica_bridge package. It currently has one example, 
+    to be used with the TwoSpringJoystickControl.mo example in ROS_Bridge. The example has
+    both controller and teleop input nodes, along with a launch file to run the whole
+    ROS system setup. 
+  </description>
 
+  <url type="repository">https://github.com/ModROS/modelica_bridge_examples.git</url>
+  <url type="tutorial">
+    https://wiki.ros.org/modelica_bridge/Tutorials/Two%20Spring-Damper%20System%20Example
+  </url>
   <maintainer email="sh.swami235@gmail.com">Shashank Swaminathan</maintainer>
-
   <license>GPLv3</license>
 
   <buildtool_depend>catkin</buildtool_depend>
