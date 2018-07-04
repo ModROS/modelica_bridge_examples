@@ -6,10 +6,10 @@
   </node>
 
  <!-- socket node -->
-  <node pkg="modelica_bridge_examples" type="modbridge_ex_controller" name="controller"/>
+  <node pkg="modelica_bridge_examples" type="two_springs_modbridgex_controller" name="controller"/>
 
  <!-- socket node -->
-  <node pkg="modelica_bridge_examples" type="modbridge_ex_teleop" name="teleop"/>
+  <node pkg="modelica_bridge_examples" type="two_springs_modbridgex_teleop" name="teleop"/>
 
  <!-- joy node -->
   <node respawn="true" pkg="joy"

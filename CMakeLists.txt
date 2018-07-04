@@ -8,15 +8,15 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 catkin_package(CATKIN_DEPENDS message_runtime ${CATKIN_DEPS})
 
-add_executable(modbridge_ex_controller src/modbridge_ex_controller.cpp)
-target_link_libraries(modbridge_ex_controller ${catkin_LIBRARIES})
-add_dependencies(modbridge_ex_controller ${catkin_EXPORTED_TARGETS})
+add_executable(two_springs_modbridgex_controller src/two_springs_example/controller.cpp)
+target_link_libraries(two_springs_modbridgex_controller ${catkin_LIBRARIES})
+add_dependencies(two_springs_modbridgex_controller ${catkin_EXPORTED_TARGETS})
 
-add_executable(modbridge_ex_teleop src/modbridge_ex_teleop.cpp)
-target_link_libraries(modbridge_ex_teleop ${catkin_LIBRARIES})
-add_dependencies(modbridge_ex_teleop ${catkin_EXPORTED_TARGETS})
+add_executable(two_springs_modbridgex_teleop src/two_springs_example/teleop.cpp)
+target_link_libraries(two_springs_modbridgex_teleop ${catkin_LIBRARIES})
+add_dependencies(two_springs_modbridgex_teleop ${catkin_EXPORTED_TARGETS})
 
-install(TARGETS modbridge_ex_controller modbridge_ex_teleop
+install(TARGETS two_springs_modbridgex_controller two_springs_modbridgex_teleop
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(DIRECTORY launch/
